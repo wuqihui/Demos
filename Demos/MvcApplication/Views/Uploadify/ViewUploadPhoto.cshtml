@@ -1,0 +1,101 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>dd</title>  
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(
+            function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '/Uploadify/GetAllUploadFile/',
+                    dataType: 'json',
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (data, textStatus) {
+                        var tbody = $('#tbody1');
+                        $.each(data, function (i, item) {
+                            OutputData(tbody, item);
+                        });
+                    }
+                });
+            });
+
+        function OutputData(tbody, item) {
+            //var uploadTime = new Date(parseInt(item.UploadedTime.substr(6)));
+            //var uploadDate = uploadTime.getFullYear() + "-" + uploadTime.getMonth() + "-" + uploadTime.getDate();
+            tbody.append("<tr>" +
+                 "<td style=\"border:1px solid #0094ff;\">" + item.FileLibrary_nbr +
+                 "</td>" +
+                  "<td style=\"border:1px solid #0094ff;\">" +
+                  "<div id=\"DivImg" + item.FileLibrary_nbr + "\" />" +
+                 "</td>" +
+                  "<td style=\"border:1px solid #0094ff;\">" + item.OldFileName +
+                 "</td>" +
+                  "<td style=\"border:1px solid #0094ff;\">" + item.Size +
+                 "</td>" +
+                 "<td style=\"border:1px solid #0094ff;\">" +//uploadDate+
+                 "</td>"
+                 );
+            var imgTag = $('#DivImg' + item.FileLibrary_nbr);
+
+            $.get("/Uploadify/GetThumbnailImage", { fileName: item.NewFileName },
+                function (data) {
+                    imgTag.html(data);
+                });
+            imgTag.click(
+                function () {
+                    $('#myModal').modal({
+                        keyboard: false
+                    });
+                    //$("#dialog").dialog(
+                    //{
+                    //    autoOpen: false,
+                    //    position: 'center',
+                    //    title: item.OldFileName,
+                    //    draggable: false,
+                    //    width: 700,
+                    //    height: 600,
+                    //    resizable: true,
+                    //    modal: true
+                    //}).dialog("open");
+
+                    $.get("/Uploadify/GetImage/", { fileName: item.NewFileName }, function (data) {
+                        $('#dialog').html(data);
+                    });
+                });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #00fa9a">ID</th>
+                    <th style="border: 1px solid #00fa9a">PHOTO</th>
+                    <th style="border: 1px solid #00fa9a">FileName</th>
+                    <th style="border: 1px solid #00fa9a">Size</th>
+                    <th style="border: 1px solid #00fa9a">UploadTime</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1"></tbody>
+        </table>
+        <div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div id="dialog" class="modal-content">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
