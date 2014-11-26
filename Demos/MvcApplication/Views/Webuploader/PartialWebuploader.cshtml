@@ -1,0 +1,20 @@
+﻿@model dynamic 
+<div id="@string.Format("uploader{0}", Model.WebuploaderIndex)" class="uploader">
+    <div id="@string.Format("queueList{0}", Model.WebuploaderIndex)" class="queueList">
+        <div id="@string.Format("placeholder{0}", Model.WebuploaderIndex)" class="placeholder">
+            <div id="@string.Format("uploadfilePicker{0}",Model.WebuploaderIndex)"></div>
+            <p>或将照片拖到这里</p>
+        </div>
+    </div>
+    <div id="@string.Format("statusBar{0}", Model.WebuploaderIndex)" class="statusBar" style="display:none;">
+        <div id="@string.Format("progress{0}", Model.WebuploaderIndex)" class="progress">
+            <span class="text">0%</span>
+            <span class="percentage"></span>
+        </div>
+        <div id="@string.Format("info{0}", Model.WebuploaderIndex)" class="info"></div>
+        <div id="@string.Format("btns{0}", Model.WebuploaderIndex)" class="btns">
+            <div id="@string.Format("btnfilePicker{0}", Model.WebuploaderIndex)"></div>
+            <div id="@string.Format("uploadBtn{0}", Model.WebuploaderIndex)" class="uploadBtn">开始上传</div>
+        </div>
+    </div>
+</div>

@@ -184,6 +184,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UploadifyController.cs" />
+    <Compile Include="Controllers\WebuploaderController.cs" />
     <Compile Include="Entity\FileLibrary.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Demo.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -263,8 +265,14 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Images\bg.png" />
+    <Content Include="Images\icons.png" />
+    <Content Include="Images\image.png" />
+    <Content Include="Images\progress.png" />
+    <Content Include="Images\success.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CustomerJs\demo.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
@@ -285,6 +293,23 @@
     <Content Include="Scripts\uploadify\uploadify-cancel.png" />
     <Content Include="Scripts\uploadify\uploadify.css" />
     <Content Include="Scripts\uploadify\uploadify.swf" />
+    <Content Include="Scripts\webUploader\Uploader.swf" />
+    <Content Include="Scripts\webUploader\webuploader.css" />
+    <Content Include="Scripts\webUploader\webuploader.custom.js" />
+    <Content Include="Scripts\webUploader\webuploader.custom.min.js" />
+    <Content Include="Scripts\webUploader\webuploader.fis.js" />
+    <Content Include="Scripts\webUploader\webuploader.flashonly.js" />
+    <Content Include="Scripts\webUploader\webuploader.flashonly.min.js" />
+    <Content Include="Scripts\webUploader\webuploader.html5only.js" />
+    <Content Include="Scripts\webUploader\webuploader.html5only.min.js" />
+    <Content Include="Scripts\webUploader\webuploader.js" />
+    <Content Include="Scripts\webUploader\webuploader.min.js" />
+    <Content Include="Scripts\webUploader\webuploader.noimage.js" />
+    <Content Include="Scripts\webUploader\webuploader.noimage.min.js" />
+    <Content Include="Scripts\webUploader\webuploader.nolog.js" />
+    <Content Include="Scripts\webUploader\webuploader.nolog.min.js" />
+    <Content Include="Scripts\webUploader\webuploader.withoutimage.js" />
+    <Content Include="Scripts\webUploader\webuploader.withoutimage.min.js" />
     <Content Include="Temp\8311fc88-7d29-4261-96ac-f814652802d0.jpg" />
     <Content Include="Temp\85752c56-574c-4a1f-8561-568355273bd0.jpg" />
     <Content Include="UploadFiles\85752c56-574c-4a1f-8561-568355273bd0.jpg" />
@@ -300,16 +325,6 @@
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -329,6 +344,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Uploadify\Index.cshtml" />
     <Content Include="Views\Uploadify\ViewUploadPhoto.cshtml" />
+    <Content Include="Scripts\webUploader\README.md" />
+    <Content Include="Views\Webuploader\Demo.cshtml" />
+    <Content Include="Views\Webuploader\PartialWebuploader.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
